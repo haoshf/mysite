@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>自动化测试系统</title>
+    <style type="text/css">
+        div {
+            border: 2px solid yellow;
+            padding: 10px;
+            margin: 20px;
+            float: right;
+        }
+        body {
+            font-family: "Microsoft Yahei";
+        }
+        input {
+            border-radius: 10px;
+            border: 1px solid red;
+            font-size: 16px;
+            min-height: 10px;
+            padding: 10px;
+            width: 40%;
+        }
+        label{
+            color: green;
+            font-size: 16px; /*字号*/
+            font-weight: bold;/*文字排版--粗体*/
+            font-style: italic;/*文字排版--斜体*/
+        }
+        button {
+            padding: 10px;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/autotest/" method="post">
+        <div>
+            <label for="username">帐号</label>
+            <input id="username" name="username" type="text" placeholder="username"><br />
+            <label for="password">密码</label>
+            <input id="password" name="password" type="text" placeholder="password"><br />
+            <button name="submit" id="btn" type="submit">登录</button>
+            {% csrf_token %}
+        </div>
+    </form>
+    <script type="text/javascript">
+        document.getElementById('username').style.color="blue";
+        document.getElementById('btn').style.color="pink";
+    </script>
+</body>
+</html>
